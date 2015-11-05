@@ -1,0 +1,31 @@
+{
+  "name": "@sublimemedia/api-connector",
+  "version": "0.1.1",
+  "description": "A standardized api for dealing with SCORM, AICC, and beyond.",
+  "main": "./dist/api-connector.js",
+  "scripts": {
+    "build": "rm -rf ./dist && broccoli build ./dist",
+    "test": "./node_modules/.bin/mocha -R spec --recursive",
+    "test-coverage": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha -- -R spec --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sublimemedia/api-connector.git"
+  },
+  "author": "Sublime Media",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/sublimemedia/api-connector/issues"
+  },
+  "homepage": "https://github.com/sublimemedia/api-connector#readme",
+  "devDependencies": {
+    "broccoli": "^0.16.3",
+    "broccoli-babel-transpiler": "^5.1.1",
+    "chai": "^3.2.0",
+    "istanbul": "^0.3.19",
+    "mocha": "^2.2.5"
+  },
+  "dependencies": {
+    "bluebird": "^2.10.2"
+  }
+}

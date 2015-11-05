@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="cache-control" content="no-cache" />
+  <meta http-equiv="pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0">
+  <title></title>
+
+  <script type="text/javascript" src="../node_modules/bluebird/js/browser/bluebird.min.js"></script>
+  <script type="text/javascript" src="../dist/api-connector.js"></script>
+  <script type="text/javascript">
+  window.localApi = function(settings, debug) {
+    'use strict';
+
+    var store = {};
+
+    function find(){
+        return true;
+    }
+
+    function initialize() {
+        return Promise.resolve();
+    }
+
+    function get(elem) {
+        return Promise.resolve(store[elem]);
+    }
+
+    function set(elem, val) {
+        store[elem] = val;
+        return Promise.resolve();
+    }
+
+    var exit = initialize,
+        sync = initialize;
+
+    return {
+        find: find,
+        initialize: initialize,
+        get: get,
+        set: set,
+        exit: exit,
+        sync: sync
+    };
+  };
+  </script>
+</head>
+<body>
+<script type="text/javascript">
+  window.sco = new apiConnector.Connect({
+      completed: 'completed',
+      incomplete: 'incomplete',
+      passed: 'passed',
+      failed: 'failed'
+    }, [window.localApi]);
+</script>
+</body>
+</html>
