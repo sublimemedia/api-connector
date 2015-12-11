@@ -1,6 +1,6 @@
 {
   "name": "@sublimemedia/api-connector",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "A standardized api for dealing with SCORM, AICC, and beyond.",
   "main": "./dist/api-connector.js",
   "scripts": {
@@ -13,7 +13,7 @@
     "url": "git+https://github.com/sublimemedia/api-connector.git"
   },
   "author": "Sublime Media",
-  "license": "UNLICENSED",
+  "license": "SEE LICENSE IN license.md",
   "bugs": {
     "url": "https://github.com/sublimemedia/api-connector/issues"
   },
